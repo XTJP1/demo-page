@@ -1,9 +1,9 @@
-const express = require('express')
-var app = express()
-app.get('/', (req, res) => {
-  res.send('MNiST Study Tool')
-})
+var express = require('express');
+var router = express.router();
 
-app.listen(3000, () =>{
-  console.log("Start server port: 3000")
-})
+/* get home page */
+router.get('/',(req,res,next) =>{
+  res.render('index', {title: 'MNiST Study Tool'});
+});
+
+module.exports = router;
