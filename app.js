@@ -9,6 +9,17 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
+import cornerstone from 'cornerstone-core';
+import cornerstoneMath from 'cornerstone-math';
+import cornerstoneTools from 'cornerstone-tools';
+import Hammer from 'hammerjs';
+
+cornerstoneTools.external.cornerstone = cornerstone;
+cornerstoneTools.external.Hammer = Hammer;
+cornerstoneTools.external.cornerstoneMath = cornerstoneMath;
+
+cornerstoneTools.init();
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
